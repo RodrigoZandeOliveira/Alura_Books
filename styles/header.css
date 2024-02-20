@@ -1,0 +1,187 @@
+.cabecalho {
+  background-color: var(--cor-branco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+
+.cabecalho__container {
+  display: flex;
+  align-items: center;
+  padding-right: 1.5em;
+}
+
+.container__img {
+  padding: 1em;
+}
+
+.cabecalho__menu-hamburguer {
+  height: 24px;
+  width: 24px;
+  background-image: url('../img/Menu.svg');
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* === HAMBURGUER MENU =============================================== */
+.lista-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  z-index: 2;
+  width: 60vw;
+}
+
+.container__btn {
+  display: none;
+}
+
+.container__btn:checked ~ .lista-menu {
+  display: block;
+}
+
+.lista-menu__titulo,
+.lista-menu__item {
+  padding: 1em;
+  background-color: var(--cor-branco);
+}
+
+.lista-menu__titulo {
+  color: var(--cor-titulo);
+  font-weight: 700;
+}
+
+.lista-menu__link {
+  background: var(--cor-azul-degrade);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-transform: uppercase;
+}
+
+.container__btn:checked ~ .container__rotulo > .cabecalho__menu-hamburguer {
+  background-image: url(../img/MenuAberto.svg);
+}
+
+.container__btn:checked ~ .container__rotulo {
+  background: var(--cor-azul-degrade);
+}
+
+.lista-menu__item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* === HIDE ELEMENTS ============================================================== */
+.container__btn,
+.container__titulo,
+.opcoes,
+.container__texto {
+  display: none;
+}
+
+/* === MEDIA QUERIES | TABLET 1024px =============================================== */
+@media screen and (min-width: 1024px) {
+  .cabecalho__container {
+    padding-right: 3em;
+  }
+
+  /* === HEADER | Título === */
+  .container__titulo,
+  .container__titulo--negrito {
+    font-family: var(--fonte-secundaria);
+    font-size: 30px;
+  }
+
+  .container__titulo {
+    font-weight: 400;
+    display: block;
+  }
+
+  .container__titulo--negrito {
+    font-weight: 700;
+  }
+
+  /* === HEADER | Opções === */
+  .opcoes {
+    display: flex;
+  }
+
+  .opcoes__item {
+    padding: 2em 1em;
+    text-transform: uppercase;
+  }
+
+  .opcoes__link {
+    text-decoration: none;
+    color: var(--cor-preto);
+  }
+
+  .container__img-transparente {
+    display: none;
+  }
+
+  .cabecalho__menu-hamburguer {
+    display: none;
+  }
+
+  .opcoes_btn {
+    display: none;
+  }
+
+  /* === HOVER EFFECTS ============================================================== */
+  .opcoes_btn:checked ~ .lista-menu {
+    display: block;
+    width: auto;
+  }
+
+  .opcoes_btn:checked ~ .opcoes__rotulo > .opcoes__item {
+    background: var(--cor-azul-degrade);
+    color: var(--cor-branco);
+  }
+
+  .opcoes__rotulo:hover {
+    background: var(--cor-azul-degrade);
+    cursor: pointer;
+    color: var(--cor-branco);
+  }
+
+  .lista-menu__item:hover {
+    background: var(--cor-azul-degrade);
+  }
+
+  .lista-menu__item:hover > .lista-menu__link {
+    -webkit-text-fill-color: var(--cor-branco);
+    text-decoration: none;
+  }
+
+  .container__link:hover > .container__texto {
+    text-decoration: underline;
+  }
+
+  .opcoes__item:hover > .opcoes__link {
+    text-decoration: underline;
+  }
+}
+
+/* === MEDIA QUERIES | DESKTOP 1728px =============================================== */
+@media screen and (min-width: 1728px) {
+  .container__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--cor-preto);
+  }
+
+  .container__texto {
+    display: block;
+  }
+
+  .opcoes {
+    margin-right: auto;
+  }
+}

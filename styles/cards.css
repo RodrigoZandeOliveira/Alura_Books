@@ -1,0 +1,115 @@
+/*CARD ==================================================*/
+.card {
+  background: var(--cor-branco);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  margin: 1em;
+  padding: 1em;
+}
+
+.card__descricao {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 0.5em;
+}
+
+.card__btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btns {
+  display: flex;
+}
+
+.descricao__titulo {
+  color: var(--cor-titulo);
+  font-weight: 700;
+}
+
+.descricao__titulo-livro {
+  color: var(--cor-azul);
+  font-size: 18px;
+  font-weight: 700;
+
+  margin: 2em 0 1em 0;
+}
+
+.descricao__texto {
+  font-size: 14px;
+}
+
+.btns__item {
+  margin: 0 0.5em;
+}
+
+.btns__item:hover {
+  cursor: pointer;
+}
+
+.btns__ancora {
+  background-color: var(--cor-titulo);
+  padding: 1em 2.2em;
+  text-decoration: none;
+  color: var(--cor-branco);
+  font-weight: 700;
+
+  transition: 0.1s ease-in-out;
+}
+
+/* === MEDIA QUERIES | TABLET 1024px =============================================== */
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 50%;
+    margin: 3em auto;
+  }
+
+  .descricao__titulo-livro {
+    margin: 2em 0 1em 0;
+  }
+
+  .btns__ancora:hover {
+    border-radius: 100em;
+    transform: scale(1.1);
+    transition: 0.1s ease-in-out;
+  }
+}
+
+/* === MEDIA QUERIES | DESKTOP 1728px =============================================== */
+@media screen and (min-width: 1728px) {
+  .card {
+    width: 40%;
+    margin: 0 0 0 3em;
+    align-self: flex-end;
+    height: 20em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card__descricao {
+    margin: 2em 1em 0 1em;
+  }
+
+  .card__btns {
+    margin: 0 2em 1em 1em;
+  }
+
+  .descricao {
+    margin-right: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .descricao__titulo {
+    font-size: 32px;
+  }
+
+  .decricao__texto {
+    font-size: 16px;
+  }
+}
